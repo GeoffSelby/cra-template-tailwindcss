@@ -7,6 +7,9 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/user-event": "^7.1.2"
   },
+  "devdependencies": {
+    "@fullhuman/postcss-purgecss": "^2.0.6"
+  },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
