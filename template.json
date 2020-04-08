@@ -1,16 +1,31 @@
 {
-  "dependencies": {
-    "@craco/craco": "^5.6.2",
-    "autoprefixer": "^9.7.3",
-    "tailwindcss": "^1.1.1",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/user-event": "^7.1.2",
-    "@fullhuman/postcss-purgecss": "^2.0.6"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
-  }
+    "dependencies": {
+        "@craco/craco": "^5.6.2",
+        "autoprefixer": "^9.7.3",
+        "tailwindcss": "^1.1.1",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/user-event": "^7.1.2",
+        "@fullhuman/postcss-purgecss": "^2.0.6",
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb": "^18.1.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-react": "^7.19.0",
+        "eslint-plugin-react-hooks": "^2.5.1",
+        "prettier": "^2.0.4",
+        "postcss-cli": "^7.1.0"
+    },
+    "scripts": {
+        "start": "craco start",
+        "build": "craco build",
+        "test": "craco test",
+        "build:styles": "postcss src/index.css -o src/styles.css",
+        "prebuild": "NODE_ENV=production yarn build:styles",
+        "prestart": "yarn build:styles",
+        "lint": "eslint --ext .js,.jsx,.ts,.tsx ./",
+        "fix": "eslint --ext .js,.jsx,.ts,.tsx  --fix ./"
+    }
 }
